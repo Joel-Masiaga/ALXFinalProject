@@ -19,9 +19,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    author = UserSerializer(read_only=True)  # Display author details, set to read-only since it will be set automatically
-    category = CategorySerializer(read_only=True)  # Display category details
-    tags = TagSerializer(many=True, read_only=True)  # Display associated tags
+    author = UserSerializer(read_only=True)  # display author details, set to read-only since it will be set automatically
+    category = CategorySerializer(read_only=True)  # display category details
+    tags = TagSerializer(many=True, read_only=True)  # display associated tags
 
     # Include fields for setting category and tags by their ID when creating or updating a post
     category_id = serializers.PrimaryKeyRelatedField(
